@@ -2,5 +2,7 @@
 </script>
 
 <template>
-  <RouterView />
+  <main>
+    <h1>Blog</h1>
+  </main>
 </template>
