@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest'
-import { loadArticlesFromRaw } from '@/content/articles'
+import { loadArticlesFromRaw } from '@/content/articles-parser'
 import { readFileSync } from 'node:fs'
 import { resolve, dirname } from 'node:path'
 import { fileURLToPath } from 'node:url'
