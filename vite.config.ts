@@ -4,10 +4,9 @@ import tailwindcss from '@tailwindcss/vite'
 import path from 'node:path'
 import { readdirSync } from 'node:fs'
 import generateSitemap from 'vite-ssg-sitemap'
-import { nodePolyfills } from 'vite-plugin-node-polyfills'
 
 export default defineConfig({
-  plugins: [vue(), tailwindcss(), nodePolyfills()],
+  plugins: [vue(), tailwindcss()],
   build: {
     target: 'es2022',
   },
