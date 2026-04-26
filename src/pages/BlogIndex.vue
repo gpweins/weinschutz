@@ -1,5 +1,16 @@
 <script setup lang="ts">
+import { useHead } from '@unhead/vue'
 import { articles } from '@/content/articles'
+
+useHead({
+  title: 'Articles — Gustavo Weinschütz',
+  meta: [
+    { name: 'description', content: 'Writing on engineering, leadership, and team communication.' },
+    { property: 'og:title', content: 'Articles — Gustavo Weinschütz' },
+    { property: 'og:url', content: 'https://weinschutz.com.br/blog' },
+  ],
+  link: [{ rel: 'canonical', href: 'https://weinschutz.com.br/blog' }],
+})
 
 function formatDate(iso: string): string {
   return new Date(iso).toLocaleDateString('en-US', {

@@ -1,11 +1,33 @@
 <script setup lang="ts">
-import { computed } from 'vue'
+import { computed, watchEffect } from 'vue'
+import { useHead } from '@unhead/vue'
 import { articles } from '@/content/articles'
 
 const props = defineProps<{ slug: string }>()
 
 const current = computed(() => articles.find((a) => a.slug === props.slug))
 const currentIndex = computed(() => articles.findIndex((a) => a.slug === props.slug))
+
+watchEffect(() => {
+  if (!current.value) return
+  const url = `https://weinschutz.com.br/blog/${current.value.slug}`
+  const ogImage = current.value.ogImage
+    ? new URL(current.value.ogImage, 'https://weinschutz.com.br').href
+    : 'https://weinschutz.com.br/og-image.png'
+  useHead({
+    title: `${current.value.title} — Gustavo Weinschütz`,
+    meta: [
+      { name: 'description', content: current.value.excerpt },
+      { property: 'og:title', content: current.value.title },
+      { property: 'og:description', content: current.value.excerpt },
+      { property: 'og:image', content: ogImage },
+      { property: 'og:url', content: url },
+      { property: 'og:type', content: 'article' },
+      { name: 'twitter:card', content: 'summary_large_image' },
+    ],
+    link: [{ rel: 'canonical', href: url }],
+  })
+})
 const prev = computed(() =>
   currentIndex.value > 0 ? articles[currentIndex.value - 1] : null,
 )
