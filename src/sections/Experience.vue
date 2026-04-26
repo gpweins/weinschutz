@@ -26,6 +26,8 @@ function formatRange(entry: ExperienceEntry): string {
           v-for="(entry, i) in experience"
           :key="`${entry.company}-${i}`"
           class="relative mb-10 last:mb-0"
+          v-motion-fade-visible-once
+          :delay="i * 60"
         >
           <span
             aria-hidden="true"

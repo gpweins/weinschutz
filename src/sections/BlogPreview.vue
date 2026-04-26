@@ -35,9 +35,11 @@ function formatDate(iso: string): string {
 
       <ul class="grid gap-6 md:grid-cols-3">
         <li
-          v-for="article in articles"
+          v-for="(article, i) in articles"
           :key="article.slug"
           class="rounded-2xl border border-[--color-border] bg-[--color-bg-sub] p-6 hover:border-[--color-accent] transition-colors"
+          v-motion-fade-visible-once
+          :delay="i * 80"
         >
           <RouterLink :to="`/blog/${article.slug}`" class="block">
             <p class="text-xs uppercase tracking-[0.16em] text-[--color-accent] mb-3">

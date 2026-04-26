@@ -15,7 +15,12 @@ import { skills } from '@/data/skills'
       </header>
 
       <div class="grid gap-10 md:grid-cols-2 lg:grid-cols-3">
-        <div v-for="group in skills" :key="group.name">
+        <div
+          v-for="(group, i) in skills"
+          :key="group.name"
+          v-motion-fade-visible-once
+          :delay="i * 80"
+        >
           <h3 class="text-xs font-medium uppercase tracking-[0.16em] text-[--color-accent-2] mb-4">
             {{ group.name }}
           </h3>
