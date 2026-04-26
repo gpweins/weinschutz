@@ -30,7 +30,8 @@ async function getMd(): Promise<MarkdownIt> {
   })
   const md = new MarkdownIt({ html: true, linkify: true, typographer: true })
   md.use(
-    fromHighlighter(highlighter, {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    fromHighlighter(highlighter as any, {
       themes: { light: 'github-light', dark: 'github-dark' },
     }),
   )
