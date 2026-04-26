@@ -3,6 +3,7 @@ import vue from '@vitejs/plugin-vue'
 import tailwindcss from '@tailwindcss/vite'
 import path from 'node:path'
 import { readdirSync } from 'node:fs'
+import generateSitemap from 'vite-ssg-sitemap'
 
 export default defineConfig({
   plugins: [vue(), tailwindcss()],
@@ -29,6 +30,11 @@ export default defineConfig({
         .map((f) => f.replace(/\.md$/, ''))
       const blogPaths = slugs.map((slug) => `/blog/${slug}`)
       return [...paths.filter((p) => !p.includes(':')), ...blogPaths]
+    },
+    onFinished() {
+      generateSitemap({
+        hostname: 'https://weinschutz.com.br/',
+      })
     },
   },
   test: {
