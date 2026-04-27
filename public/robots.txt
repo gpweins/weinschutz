@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://weinschutz.com.br/sitemap.xml
+Sitemap: https://gpweins.github.io/weinschutz/sitemap.xml
