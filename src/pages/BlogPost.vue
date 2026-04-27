@@ -10,10 +10,10 @@ const currentIndex = computed(() => articles.findIndex((a) => a.slug === props.s
 
 watchEffect(() => {
   if (!current.value) return
-  const url = `https://weinschutz.com.br/blog/${current.value.slug}`
+  const url = `https://gpweins.github.io/weinschutz/blog/${current.value.slug}`
   const ogImage = current.value.ogImage
-    ? new URL(current.value.ogImage, 'https://weinschutz.com.br').href
-    : 'https://weinschutz.com.br/og-image.png'
+    ? new URL(current.value.ogImage, 'https://gpweins.github.io/weinschutz').href
+    : 'https://gpweins.github.io/weinschutz/og-image.png'
   useHead({
     title: `${current.value.title} — Gustavo Weinschütz`,
     meta: [

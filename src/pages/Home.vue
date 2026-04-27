@@ -19,12 +19,12 @@ useHead({
       property: 'og:description',
       content: 'Senior Software Engineer with 15+ years building scalable backends and full-stack systems.',
     },
-    { property: 'og:image', content: 'https://weinschutz.com.br/og-image.png' },
-    { property: 'og:url', content: 'https://weinschutz.com.br/' },
+    { property: 'og:image', content: 'https://gpweins.github.io/weinschutz/og-image.png' },
+    { property: 'og:url', content: 'https://gpweins.github.io/weinschutz/' },
     { property: 'og:type', content: 'website' },
     { name: 'twitter:card', content: 'summary_large_image' },
   ],
-  link: [{ rel: 'canonical', href: 'https://weinschutz.com.br/' }],
+  link: [{ rel: 'canonical', href: 'https://gpweins.github.io/weinschutz/' }],
 })
 </script>
 

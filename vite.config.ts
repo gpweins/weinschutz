@@ -51,6 +51,7 @@ function articlesPrecompile(): Plugin {
 }
 
 export default defineConfig({
+  base: '/weinschutz/',
   plugins: [vue(), tailwindcss(), articlesPrecompile()],
   build: {
     target: 'es2022',
@@ -78,7 +79,7 @@ export default defineConfig({
     },
     onFinished() {
       generateSitemap({
-        hostname: 'https://weinschutz.com.br/',
+        hostname: 'https://gpweins.github.io/weinschutz/',
       })
     },
   },

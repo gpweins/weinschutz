@@ -7,9 +7,9 @@ useHead({
   meta: [
     { name: 'description', content: 'Writing on engineering, leadership, and team communication.' },
     { property: 'og:title', content: 'Articles — Gustavo Weinschütz' },
-    { property: 'og:url', content: 'https://weinschutz.com.br/blog' },
+    { property: 'og:url', content: 'https://gpweins.github.io/weinschutz/blog' },
   ],
-  link: [{ rel: 'canonical', href: 'https://weinschutz.com.br/blog' }],
+  link: [{ rel: 'canonical', href: 'https://gpweins.github.io/weinschutz/blog' }],
 })
 
 function formatDate(iso: string): string {
