@@ -1,24 +1,8 @@
 <script setup lang="ts">
-import { ref, onMounted } from 'vue'
+import { ref } from 'vue'
 
-const calRef = ref<HTMLDivElement | null>(null)
 const embedFailed = ref(false)
 
-onMounted(async () => {
-  try {
-    const EmbedSnippet = (await import('@calcom/embed-snippet')).default
-    const Cal = EmbedSnippet()
-    Cal('init', { origin: 'https://app.cal.com' })
-    Cal('inline', {
-      elementOrSelector: calRef.value!,
-      calLink: 'gpweins',
-      config: { theme: 'auto' },
-    })
-  } catch (e) {
-    console.error('Cal.com embed failed', e)
-    embedFailed.value = true
-  }
-})
 </script>
 
 <template>
@@ -43,9 +27,6 @@ onMounted(async () => {
         style="min-height: 600px;"
       />
       <div v-else class="rounded-2xl border border-[--color-border] bg-[--color-bg] p-10 text-center">
-        <p class="text-[--color-ink-muted] mb-4">
-          Could not load the booking widget.
-        </p>
         <a
           href="https://app.cal.com/gpweins/"
           target="_blank"
