@@ -143,14 +143,14 @@ Sticky, top: 0, z-index: 50. Transparent at scroll-top; switches to `color-mix(i
 ```
 [ eyebrow: SENIOR SOFTWARE ENGINEER ]
 [ h1: Gustavo \n Weinschütz  — 112px / 56px compact, weight 700, line-height 0.95, letter-spacing -0.02em ]
-[ p:  I build web applications that are fast, scalable, and a pleasure to use.  — max-w 520, 18px, ink-muted ]
+[ p:  Senior full stack engineer with 15+ years building scalable systems across healthtech, pharma, finance, and logistics. Backend specialist in PHP and Laravel, with strong experience in Vue, PostgreSQL, and CI/CD.  — max-w 520, 18px, ink-muted, sized to wrap at 2 to 3 lines on desktop ]
 [ Pill primary → #contact: "Book a Call" ]  [ Pill ghost → /weinschutz/resume.pdf: "Download Resume" ]
 [ ↓ Scroll  — desktop only, absolutely positioned bottom-32 ]
 ```
 
 ### Experience
 
-Header: eyebrow "Experience", h2 "15+ years building software", subtitle "Healthtech, pharma, finance, logistics, and CRM."
+Header: eyebrow "Experience", subtitle "Healthtech, pharma, finance, logistics, and CRM." (no h2).
 
 Body: ordered list, `border-left: 1px solid var(--color-border)` rail, padding-left 44px (28px compact). Each entry:
 
@@ -165,7 +165,7 @@ Data: `EXPERIENCE` array of 8 entries from `src/data/experience.ts`, lifted verb
 
 ### Skills
 
-`bg-sub` band. Header: eyebrow "Skills", h2 "Tools I reach for".
+`bg-sub` band. Header: eyebrow "Skills" (no h2).
 
 Body: 3-col grid (1-col compact), gap 40. Each group:
 
@@ -198,7 +198,7 @@ Data: `getCollection('blog')` sorted desc by `date`, sliced to 3. If fewer than 
 
 ### Contact
 
-`bg-sub` band. Header: eyebrow "Contact", h2 "Let's talk.", subtitle "Open to senior backend and full-stack roles. Pick a slot below — or reach out on LinkedIn."
+`bg-sub` band. Header: eyebrow "Contact", h2 "Let's talk.", subtitle "Click the button below to book a 30 minute intro call on my Cal.com page." (no em dashes or hyphens in the body copy of this section).
 
 Body: a single primary `Pill` "Book a Call on Cal.com →" linking to `https://cal.com/gpweins` with `target="_blank" rel="noopener"`. No mock calendar; the JSX `CalEmbedMock` was a design-canvas placeholder, not a deliverable.
 
