@@ -1,0 +1,32 @@
+---
+import Base from '../../layouts/Base.astro';
+import Eyebrow from '../../components/Eyebrow.astro';
+import { getCollection } from 'astro:content';
+
+const all = await getCollection('blog');
+const articles = all.sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+const fmt = new Intl.DateTimeFormat('en-US', { dateStyle: 'long' });
+const base = import.meta.env.BASE_URL;
+---
+<Base title="Articles · Weinschutz" description="Notes on engineering leadership, communication, and the craft of building software.">
+  <div class="max-w-[768px] mx-auto px-8 py-20 max-[640px]:py-10 max-[640px]:px-5">
+    <header class="mb-14 max-[640px]:mb-8" data-fade>
+      <Eyebrow>Writing</Eyebrow>
+      <h1 class="m-0 mt-3 text-[48px] font-bold tracking-tight text-[--color-ink] max-[640px]:text-[32px]">Articles</h1>
+      <p class="m-0 mt-4 text-base text-[--color-ink-muted] leading-[1.55]">
+        Notes on engineering leadership, communication, and the craft of building software.
+      </p>
+    </header>
+    <ul class="list-none p-0 m-0 grid gap-1">
+      {articles.map((a, i) => (
+        <li data-fade data-delay={i * 60}>
+          <a href={`${base}blog/${a.id}`} class="block py-7 border-b border-[--color-border] no-underline text-inherit">
+            <p class="m-0 mb-[10px] text-[11px] uppercase tracking-[0.16em] text-[--color-accent]">{fmt.format(a.data.date)}</p>
+            <h2 class="m-0 mb-[10px] text-[24px] font-semibold leading-tight tracking-tight text-[--color-ink] max-[640px]:text-[20px]">{a.data.title}</h2>
+            <p class="m-0 text-[15px] leading-[1.6] text-[--color-ink-muted] max-w-[620px]">{a.data.excerpt}</p>
+          </a>
+        </li>
+      ))}
+    </ul>
+  </div>
+</Base>
