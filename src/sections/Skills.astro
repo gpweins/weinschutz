@@ -1,0 +1,23 @@
+---
+import Eyebrow from '../components/Eyebrow.astro';
+import { SKILLS } from '../data/skills';
+---
+<section id="skills" class="px-8 py-32 bg-[--color-bg-sub] max-[640px]:py-16 max-[640px]:px-5">
+  <div class="max-w-[1024px] mx-auto">
+    <header class="mb-12 max-[640px]:mb-8" data-fade>
+      <Eyebrow>Skills</Eyebrow>
+    </header>
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-10">
+      {SKILLS.map((g, i) => (
+        <div data-fade data-delay={i * 80}>
+          <h3 class="m-0 mb-4 text-[11px] font-medium uppercase tracking-[0.16em] text-[--color-accent-2]">{g.name}</h3>
+          <ul class="flex flex-wrap gap-2 list-none p-0 m-0">
+            {g.chips.map((c) => (
+              <li class="rounded-full border border-[--color-border] bg-[--color-bg] px-3 py-[6px] text-xs text-[--color-ink]">{c}</li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
