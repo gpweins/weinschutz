@@ -1,0 +1,22 @@
+---
+import Eyebrow from '../components/Eyebrow.astro';
+import Pill from '../components/Pill.astro';
+
+const resumeHref = `${import.meta.env.BASE_URL}resume.pdf`;
+---
+<section id="hero" class="relative min-h-[720px] flex items-center px-8">
+  <div class="max-w-[1024px] mx-auto w-full" data-fade>
+    <Eyebrow>Senior Software Engineer</Eyebrow>
+    <h1 class="m-0 mt-6 mb-8 text-[112px] leading-[0.95] font-bold tracking-tight text-[--color-ink] max-[640px]:text-[56px]">
+      Gustavo<br />Weinschütz
+    </h1>
+    <p class="max-w-[520px] text-[18px] leading-[1.6] text-[--color-ink-muted] m-0 mb-10">
+      Senior full stack engineer with 15+ years building scalable systems across healthtech, pharma, finance, and logistics. Backend specialist in PHP and Laravel, with strong experience in Vue, PostgreSQL, and CI/CD.
+    </p>
+    <div class="flex gap-3 flex-col sm:flex-row">
+      <Pill primary href="#contact">Book a Call</Pill>
+      <Pill href={resumeHref}>Download Resume</Pill>
+    </div>
+  </div>
+  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 text-[11px] uppercase tracking-[0.2em] text-[--color-ink-muted] hidden sm:block">↓ Scroll</div>
+</section>
