@@ -1,0 +1,42 @@
+---
+import Eyebrow from '../components/Eyebrow.astro';
+import { getCollection } from 'astro:content';
+
+const all = await getCollection('blog');
+const sorted = all.sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+const articles = sorted.slice(0, 3);
+const fmt = new Intl.DateTimeFormat('en-US', { dateStyle: 'long' });
+const fillerSpan = 3 - articles.length;
+const base = import.meta.env.BASE_URL;
+---
+<section id="blog" class="px-8 py-32 max-[640px]:py-16 max-[640px]:px-5">
+  <div class="max-w-[1024px] mx-auto">
+    <header class="mb-12 flex items-end justify-between gap-6 max-[640px]:mb-8" data-fade>
+      <div>
+        <Eyebrow>Writing</Eyebrow>
+        <h2 class="m-0 mt-3 text-[40px] font-bold tracking-tight text-[--color-ink] max-[640px]:text-[28px]">Recent articles</h2>
+      </div>
+      <a href={`${base}blog`} class="hidden sm:inline text-sm text-[--color-accent-2] no-underline">View all articles →</a>
+    </header>
+    <ul class="grid grid-cols-1 sm:grid-cols-3 gap-6 list-none p-0 m-0">
+      {articles.map((a, i) => (
+        <li class="rounded-2xl border border-[--color-border] bg-[--color-bg-sub] p-6 transition-colors" data-fade data-delay={i * 80}>
+          <a href={`${base}blog/${a.id}`} class="block text-inherit no-underline">
+            <p class="m-0 mb-3 text-[11px] uppercase tracking-[0.16em] text-[--color-accent]">{fmt.format(a.data.date)}</p>
+            <h3 class="m-0 mb-2 text-[15px] font-semibold leading-snug text-[--color-ink]">{a.data.title}</h3>
+            <p class="m-0 text-[13px] leading-[1.55] text-[--color-ink-muted] line-clamp-3">{a.data.excerpt}</p>
+            <p class="mt-4 text-xs text-[--color-accent-2] m-0">Read →</p>
+          </a>
+        </li>
+      ))}
+      {fillerSpan > 0 && (
+        <li class={`rounded-2xl border border-dashed border-[--color-border] p-6 flex items-center justify-center min-h-[160px] sm:col-span-${fillerSpan}`}>
+          <a href={`${base}blog`} class="text-[13px] text-[--color-ink-muted] no-underline text-center">
+            More on the way.<br />
+            <span class="text-[--color-accent-2]">View archive →</span>
+          </a>
+        </li>
+      )}
+    </ul>
+  </div>
+</section>
