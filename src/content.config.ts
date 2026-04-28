@@ -1,5 +1,6 @@
-import { defineCollection, z } from 'astro:content';
+import { defineCollection } from 'astro:content';
 import { glob } from 'astro/loaders';
+import { z } from 'zod';
 
 const blog = defineCollection({
   loader: glob({ pattern: '**/*.md', base: './src/content/blog' }),
@@ -7,7 +8,7 @@ const blog = defineCollection({
     title: z.string(),
     date: z.coerce.date(),
     excerpt: z.string(),
-    linkedinUrl: z.string().url().optional(),
+    linkedinUrl: z.url().optional(),
     headerImage: z.string().optional(),
   }),
 });
