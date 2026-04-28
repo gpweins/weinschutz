@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://gpweins.github.io/weinschutz/sitemap-index.xml

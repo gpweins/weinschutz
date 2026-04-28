@@ -1,0 +1,12 @@
+---
+import Base from '../layouts/Base.astro';
+const base = import.meta.env.BASE_URL;
+---
+<Base title="Not found · Weinschutz">
+  <section class="max-w-[640px] mx-auto px-8 py-32 text-center">
+    <p class="m-0 text-[11px] uppercase tracking-[0.18em] text-[--color-accent]">404</p>
+    <h1 class="m-0 mt-3 text-[48px] font-bold tracking-tight text-[--color-ink]">Page not found</h1>
+    <p class="m-0 mt-4 text-[--color-ink-muted]">The page you were looking for doesn't exist.</p>
+    <a href={base} class="inline-block mt-8 text-[--color-accent-2] no-underline">← Back home</a>
+  </section>
+</Base>
