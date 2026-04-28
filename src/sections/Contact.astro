@@ -1,0 +1,18 @@
+---
+import Eyebrow from '../components/Eyebrow.astro';
+import Pill from '../components/Pill.astro';
+---
+<section id="contact" class="px-8 py-32 bg-[--color-bg-sub] max-[640px]:py-16 max-[640px]:px-5">
+  <div class="max-w-[1024px] mx-auto">
+    <header class="mb-10" data-fade>
+      <Eyebrow>Contact</Eyebrow>
+      <h2 class="m-0 mt-3 text-[40px] font-bold tracking-tight text-[--color-ink] max-[640px]:text-[28px]">Let's talk.</h2>
+      <p class="m-0 mt-3 max-w-[520px] text-[--color-ink-muted] text-[15px]">
+        Click the button below to book a 30 minute intro call on my Cal.com page.
+      </p>
+    </header>
+    <div data-fade>
+      <Pill primary href="https://cal.com/gpweins" external>Book a Call on Cal.com →</Pill>
+    </div>
+  </div>
+</section>
