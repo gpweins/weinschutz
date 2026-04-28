@@ -1,0 +1,8 @@
+---
+type Props = { color?: string };
+const { color = 'var(--color-accent)' } = Astro.props;
+---
+<p
+  style={`color:${color};`}
+  class="m-0 text-[12px] font-medium uppercase tracking-[0.18em]"
+><slot /></p>

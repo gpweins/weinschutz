@@ -1,0 +1,15 @@
+---
+type Props = { primary?: boolean; href: string; external?: boolean };
+const { primary = false, href, external = false } = Astro.props;
+const target = external ? '_blank' : undefined;
+const rel = external ? 'noopener' : undefined;
+const cls = primary
+  ? 'bg-[--color-ink] text-[--color-bg] border-[--color-ink]'
+  : 'bg-transparent text-[--color-ink] border-[--color-border]';
+---
+<a
+  href={href}
+  target={target}
+  rel={rel}
+  class={`inline-flex items-center justify-center px-7 py-[14px] rounded-full text-sm font-medium no-underline transition-all border ${cls}`}
+><slot /></a>
