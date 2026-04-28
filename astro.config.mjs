@@ -7,5 +7,8 @@ export default defineConfig({
   base: '/weinschutz/',
   trailingSlash: 'ignore',
   integrations: [sitemap()],
-  vite: { plugins: [tailwindcss()] },
+  vite: {
+    plugins: [tailwindcss()],
+    build: { assetsInlineLimit: 0 },
+  },
 });
