@@ -18,7 +18,7 @@ const canonicalUrl = canonical ?? siteUrl;
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self'; script-src 'self'; font-src 'self' https://rsms.me; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self';" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self'; script-src 'self'; font-src 'self'; connect-src 'self'; form-action 'self';" />
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonicalUrl} />
@@ -27,7 +27,6 @@ const canonicalUrl = canonical ?? siteUrl;
     <meta property="og:url" content={canonicalUrl} />
     <meta property="og:type" content="website" />
     <link rel="icon" type="image/svg+xml" href={`${import.meta.env.BASE_URL}favicon.svg`} />
-    <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
     <script>
       import { applyInitialTheme } from '../scripts/theme';
       applyInitialTheme();

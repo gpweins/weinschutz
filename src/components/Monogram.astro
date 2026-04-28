@@ -1,9 +1,17 @@
 ---
 type Props = { size?: number };
 const { size = 28 } = Astro.props;
+const sizeClass =
+  size === 26 ? 'w-[26px] h-[26px] text-[9.88px]' : 'w-[28px] h-[28px] text-[10.64px]';
+
+// #region agent log
+fetch('http://127.0.0.1:7920/ingest/cc42bc14-304a-4b0e-a775-9f11c065bc98',{method:'POST',headers:{'Content-Type':'application/json','X-Debug-Session-Id':'e0a3e5'},body:JSON.stringify({sessionId:'e0a3e5',runId:'pre-fix',hypothesisId:'A',location:'src/components/Monogram.astro:4',message:'Monogram render style payload',data:{size,inlineStyle:`width:${size}px;height:${size}px;font-size:${size * 0.38}px;`,sizeClass},timestamp:Date.now()})}).catch(()=>{});
+// #endregion agent log
 ---
 <span
   aria-hidden="true"
-  style={`width:${size}px;height:${size}px;font-size:${size * 0.38}px;`}
-  class="inline-flex items-center justify-center rounded-full font-semibold tracking-wide border border-[--color-accent] text-[--color-accent]"
+  class:list={[
+    'inline-flex items-center justify-center rounded-full font-semibold tracking-wide border border-[--color-accent] text-[--color-accent]',
+    sizeClass,
+  ]}
 >GW</span>

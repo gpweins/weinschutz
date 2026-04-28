@@ -1,8 +1,6 @@
 ---
-type Props = { color?: string };
-const { color = 'var(--color-accent)' } = Astro.props;
+type Props = Record<string, never>;
 ---
 <p
-  style={`color:${color};`}
-  class="m-0 text-[12px] font-medium uppercase tracking-[0.18em]"
+  class="m-0 text-[12px] font-medium uppercase tracking-[0.18em] text-[--color-accent]"
 ><slot /></p>
