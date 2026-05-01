@@ -13,7 +13,7 @@ export const EXPERIENCE: Job[] = [
     range: 'Oct 2025 — Present',
     location: 'Remote',
     summary:
-      'Operate as an independent consultant under G. P. Weinschütz Softwares M.E., partnering with clients to ship full-stack features in PHP, Laravel, and Vue.js. Engage end-to-end—from translating business needs into technical scope, to delivering features and resolving critical incidents in production systems.',
+      'Operate as an independent consultant under G. P. Weinschütz Softwares M.E., partnering with clients to ship full-stack features in PHP, Laravel, and Vue.js. Engage end-to-end, from translating business needs into technical scope, to delivering features and resolving critical incidents in production systems.',
   },
   {
     company: 'Adeva',
