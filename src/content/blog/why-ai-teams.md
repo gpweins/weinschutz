@@ -47,6 +47,9 @@ The teams adopting this combination are not moving more slowly than their vibe-c
 ---
 
 https://www.gitclear.com/coding_on_copilot_data_shows_ais_downward_pressure_on_code_quality
+
 https://arxiv.org/html/2602.20478v1
+
 https://www.augmentcode.com/guides/vibe-coding-vs-spec-driven-development
+
 https://12factor.net
