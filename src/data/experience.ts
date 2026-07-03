@@ -49,7 +49,7 @@ export const EXPERIENCE: Job[] = [
   },
   {
     company: 'Polaris Informática',
-    role: 'Junior System Analyst',
+    role: 'System Analyst',
     range: 'Jul 2009 — Sep 2009',
     location: 'Vitória, Brazil',
     summary:
